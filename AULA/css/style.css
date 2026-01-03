@@ -1,0 +1,56 @@
+/* --- Ajustes para el sistema de Cursos --- */
+
+.cursos-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.curso-item {
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.curso-item summary {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--secundario);
+    list-style: none; /* Quita la flecha por defecto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.curso-item summary::after {
+    content: '▼';
+    font-size: 0.7rem;
+    transition: 0.3s;
+}
+
+.curso-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.curso-item[open] {
+    border-color: var(--acento);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.curso-item .links-group {
+    padding: 10px 15px 15px 15px;
+    margin-top: 0;
+    background: #ffffff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Reducción de tamaño de botones dentro de cursos para que no ocupen tanto espacio */
+.curso-item .btn-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}

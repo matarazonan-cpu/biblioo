@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca FIME - UNAC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primario: #0b1a2a;
+            --secundario: #1e3a5f;
+            --acento: #f39c12;
+            --fondo: #f0f4f8;
+            --blanco: #ffffff;
+            --texto-oscuro: #2c3e50;
+            --success: #25d366;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto-oscuro);
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            background-image: linear-gradient(rgba(11, 26, 42, 0.9), rgba(30, 58, 95, 0.7)), 
+                            url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--blanco);
+            max-width: 850px;
+        }
+
+        .hero h3 { font-weight: 300; margin: 0; letter-spacing: 2px; text-transform: uppercase; font-size: 1rem; }
+        .facultad-tag { color: var(--acento); font-weight: 600; margin: 10px 0; }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.2; margin: 15px 0; }
+        .divider { width: 60px; height: 4px; background: var(--acento); margin: 0 auto 20px; }
+
+        /* Contenedor y Tarjetas */
+        .container {
+            max-width: 1200px;
+            margin: -60px auto 60px;
+            padding: 0 20px;
+        }
+
+        .main-header {
+            background: var(--blanco);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .grid-ciclos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card-ciclo {
+            background: var(--blanco);
+            padding: 30px 20px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--primario);
+            transition: 0.3s;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #eef2f7;
+            padding: 5px 12px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: var(--secundario);
+        }
+
+        /* Acordeón de Cursos */
+        .cursos-container { margin-top: 25px; }
+
+        .curso-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .curso-item summary {
+            padding: 12px 15px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primario);
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .curso-item summary::after { content: '▾'; color: var(--acento); }
+
+        .links-group {
+            padding: 10px 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            background: white;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .btn-link {
+            text-decoration: none;
+            background: #f1f5f9;
+            color: var(--texto-oscuro);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* SECCIÓN DE ASESORÍA REINCORPORADA */
+        .asesoria-box {
+            margin-top: 60px;
+            background: var(--blanco);
+            border: 2px dashed #cbd5e0;
+            padding: 50px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .asesoria-box h4 {
+            font-size: 1.5rem;
+            color: var(--primario);
+            margin-bottom: 15px;
+        }
+
+        .asesoria-box p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--success);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            background: #20ba5a;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primario);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h3>Universidad Nacional del Callao</h3>
+                <p class="facultad-tag">Facultad de Ingeniería Mecánica y de Energía</p>
+                <h1>Escuela Profesional de Ingeniería Mecánica</h1>
+                <div class="divider"></div>
+                <p>Biblioteca Virtual Independiente: Accede a cursos, libros y exámenes compartidos por la comunidad FIME.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="ciclos">
+        <div class="main-header">
+            <h2>Malla Curricular Organizada</h2>
+            <p>Selecciona un ciclo para ver las asignaturas y recursos específicos.</p>
+        </div>
+
+        <div class="grid-ciclos">
+            <div class="card-ciclo">
+                <div class="badge">Nivel 01</div>
+                <h2>Ciclo I</h2>
+                <div class="cursos-container">
+                    <details class="curso-item">
+                        <summary>Cálculo Diferencial</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📚 Libros</a><a href="#" class="btn-link">📝 Exámenes</a></div>
+                    </details>
+                    <details class="curso-item">
+                        <summary>Introducción a la Ing. Mecánica</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📚 Libros</a><a href="#" class="btn-link">📂 Guías</a></div>
+                    </details>
+                    <details class="curso-item">
+                        <summary>Química Aplicada</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📚 Libros</a><a href="#" class="btn-link">📝 Exámenes</a></div>
+                    </details>
+                </div>
+            </div>
+
+            <div class="card-ciclo">
+                <div class="badge">Nivel 05</div>
+                <h2>Ciclo V</h2>
+                <div class="cursos-container">
+                    <details class="curso-item">
+                        <summary>Mecánica de Fluidos I</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📚 Libros</a><a href="#" class="btn-link">📝 Bancos</a></div>
+                    </details>
+                    <details class="curso-item">
+                        <summary>Mecánica de Materiales I</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📝 Exámenes</a><a href="#" class="btn-link">📚 Libros</a></div>
+                    </details>
+                    <details class="curso-item">
+                        <summary>Termodinámica I</summary>
+                        <div class="links-group"><a href="#" class="btn-link">📚 Libros</a><a href="#" class="btn-link">📝 Exámenes</a></div>
+                    </details>
+                </div>
+            </div>
+
+            </div>
+
+        <section class="asesoria-box">
+            <h4>¿Necesitas apoyo académico personalizado?</h4>
+            <p>Si tienes dificultades con ejercicios de <strong>Estática, Dinámica, Termo o Fluidos</strong>, o buscas asesoría para tus exámenes finales, contáctame directamente para ayudarte a aprobar.</p>
+            <a href="https://wa.me/51TUNUMERO" target="_blank" class="btn-whatsapp">
+                Consultar Asesoría por WhatsApp
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>FIME UNAC 2026</strong></p>
+        <p style="font-size: 0.75rem; opacity: 0.6;">Repositorio independiente para fines estrictamente académicos.</p>
+    </footer>
+
+</body>
+</html>
